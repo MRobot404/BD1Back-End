@@ -32,7 +32,7 @@ public class Rol implements Serializable{
 
 
 
-	   @Id
+	   	@Id
 	    @Basic(optional = false)
 	    @Column(name = "ID_ROL")
 	    @GeneratedValue(generator = "ID_ROL")
