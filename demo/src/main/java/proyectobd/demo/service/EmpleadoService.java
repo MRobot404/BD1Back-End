@@ -14,23 +14,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import proyectobd.demo.entity.Persona;
-import proyectobd.demo.repository.PersonaRepository;
+import proyectobd.demo.repository.EmpleadoRepository;
 
 @RestController
-@RequestMapping("/persona")
+@RequestMapping("/empleado")
 @CrossOrigin
-public class PersonaService {
+public class EmpleadoService {
 
 	@Autowired
-	PersonaRepository personaRepository;
+	EmpleadoRepository empleadoRepository;
 	
 	@GetMapping(path = "/buscar")
-     public List<Persona> buscar(){
-		return personaRepository.findAll();
+    public List<Empleado> buscar(){
+		return empleadoRepository.findAll();
 	}
 	@PostMapping(path ="/guardar")
-	public Persona saveRol(@RequestBody Persona persona) {
-		return personaRepository.save(persona);
+	public Persona saveEmpleado(@RequestBody Empleado empleado) {
+		return empleadoRepository.save(empleado);
 	}
 	
 	@DeleteMapping(path="/eliminar/{idpersona}")
@@ -40,4 +40,5 @@ public class PersonaService {
 			personaRepository.delete(persona.get());
 		}
 	}
+	
 }
