@@ -31,7 +31,6 @@ public class Rol implements Serializable{
 	    @Parameter(name = "schema", value = "SYSTEM") })
 
 
-
 	   	@Id
 	    @Basic(optional = false)
 	    @Column(name = "ID_ROL")
