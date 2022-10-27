@@ -5,10 +5,10 @@ import java.io.Serializable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import proyectobd.demo.entity.Rol;
+import proyectobd.demo.entity.Aldeas_Caserio;
 
 
-@Repository("rolRepository")
-public interface RolRepository extends JpaRepository<Rol, Serializable> {
+@Repository("aldeas_caserioRepository")
+public interface Aldeas_CaserioRepository extends JpaRepository<Aldeas_Caserio, Serializable>{
 
 }

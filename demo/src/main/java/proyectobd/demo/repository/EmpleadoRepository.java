@@ -5,10 +5,12 @@ import java.io.Serializable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import proyectobd.demo.entity.Rol;
+import proyectobd.demo.entity.Empleado;
 
 
-@Repository("rolRepository")
-public interface RolRepository extends JpaRepository<Rol, Serializable> {
+@Repository("empleadoRepository")
+public interface EmpleadoRepository extends JpaRepository<Empleado, Serializable>{
+	
+	
 
 }
