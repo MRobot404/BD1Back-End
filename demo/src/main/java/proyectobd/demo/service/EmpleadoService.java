@@ -1,6 +1,7 @@
 package proyectobd.demo.service;
 
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,15 +17,33 @@ import org.springframework.web.bind.annotation.RestController;
 import proyectobd.demo.entity.Persona;
 import proyectobd.demo.repository.EmpleadoRepository;
 
+=======
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import proyectobd.demo.entity.Empleado;
+import proyectobd.demo.repository.EmpleadoRepository;
+
+
+>>>>>>> 76d364d353372036d643f9b09e6f242166cf2823
 @RestController
 @RequestMapping("/empleado")
 @CrossOrigin
 public class EmpleadoService {
 
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 76d364d353372036d643f9b09e6f242166cf2823
 	@Autowired
 	EmpleadoRepository empleadoRepository;
 	
 	@GetMapping(path = "/buscar")
+<<<<<<< HEAD
     public List<Empleado> buscar(){
 		return empleadoRepository.findAll();
 	}
@@ -40,5 +59,10 @@ public class EmpleadoService {
 			personaRepository.delete(persona.get());
 		}
 	}
+=======
+     public List<Empleado> buscar(){
+		return empleadoRepository.findAll();
+	}
+>>>>>>> 76d364d353372036d643f9b09e6f242166cf2823
 	
 }
