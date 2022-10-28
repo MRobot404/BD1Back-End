@@ -14,70 +14,81 @@ import org.hibernate.annotations.Parameter;
 
 @Entity
 @Table(name = "telefono")
-public class Telefono implements Serializable{
-	
+public class Telefono  implements Serializable {
+
 	private static final long serialVersionUID = 2L;
-	
-	 @GenericGenerator(name = "IDTELEFONO", strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator", parameters = {
-	 @Parameter(name = "sequence_name", value = "test_seq"),
-	 @Parameter(name = "initial_value", value = "1"), @Parameter(name = "increment_size", value = "1"),
-	 @Parameter(name = "schema", value = "SYSTEM") })
 
-	
+	@GenericGenerator(name = "IDTELEFONO", strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator", parameters = {
+			@Parameter(name = "sequence_name", value = "test_seq"), @Parameter(name = "initial_value", value = "1"),
+			@Parameter(name = "increment_size", value = "1"), @Parameter(name = "schema", value = "SYSTEM") })
+
 	@Id
-    @Basic(optional = false)
-    @Column(name = "IDTELEFONO")
-    @GeneratedValue(generator = "IDTELEFONO")
-    private Integer idtelefono;
-   
-   
-   @Column(name = "IDCLIENTE")
-	 private  String idcliente;
+	@Basic(optional = false)
+	@Column(name = "IDTELEFONO")
+	@GeneratedValue(generator = "IDTELEFONO")
+	private Integer idtelefono;
 
-   @Column(name = "IDPERSONA")
-	 private  String idpersona;
-   
-   @Column(name = "NUMERO")
-	 private  String numero;
+	@Column(name = "IDCLIENTE")
+	private Integer idcliente;
 
-public Integer getIdtelefono() {
-	return idtelefono;
-}
+	@Column(name = "IDPERSONA")
+	private Integer idpersona;
 
-public void setIdtelefono(Integer idtelefono) {
-	this.idtelefono = idtelefono;
-}
+	@Column(name = "NUMERO")
+	private Integer numero;
 
-public String getIdcliente() {
-	return idcliente;
-}
 
-public void setIdcliente(String idcliente) {
-	this.idcliente = idcliente;
-}
 
-public String getIdpersona() {
-	return idpersona;
-}
+	public Integer getIdtelefono() {
+		return idtelefono;
+	}
 
-public void setIdpersona(String idpersona) {
-	this.idpersona = idpersona;
-}
 
-public String getNumero() {
-	return numero;
-}
 
-public void setNumero(String numero) {
-	this.numero = numero;
-}
+	public void setIdtelefono(Integer idtelefono) {
+		this.idtelefono = idtelefono;
+	}
 
-public static long getSerialversionuid() {
-	return serialVersionUID;
-}
-   
-   
-   
 
+
+	public Integer getIdcliente() {
+		return idcliente;
+	}
+
+
+
+	public void setIdcliente(Integer idcliente) {
+		this.idcliente = idcliente;
+	}
+
+
+
+	public Integer getIdpersona() {
+		return idpersona;
+	}
+
+
+
+	public void setIdpersona(Integer idpersona) {
+		this.idpersona = idpersona;
+	}
+
+
+
+	public Integer getNumero() {
+		return numero;
+	}
+
+
+
+	public void setNumero(Integer numero) {
+		this.numero = numero;
+	}
+
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 
 }
