@@ -14,30 +14,28 @@ import org.hibernate.annotations.Parameter;
 
 @Entity
 @Table(name = "categorias")
-public class Categorias implements Serializable{
-	
+public class Categorias implements Serializable {
+
 	private static final long serialVersionUID = 1L;
-			
-			@GenericGenerator(name = "IDCATEGORIA", strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator", parameters = {
-				    @Parameter(name = "sequence_name", value = "test_seq"),
-				    @Parameter(name = "initial_value", value = "1"), @Parameter(name = "increment_size", value = "1"),
-				    @Parameter(name = "schema", value = "SYSTEM") })
+
+	@GenericGenerator(name = "IDCATEGORIA", strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator", parameters = {
+			@Parameter(name = "sequence_name", value = "test_seq"), @Parameter(name = "initial_value", value = "1"),
+			@Parameter(name = "increment_size", value = "1"), @Parameter(name = "schema", value = "SYSTEM") })
 
 	@Id
-    @Basic(optional = false)
-    @Column(name = "IDCATEGORIA")
-    @GeneratedValue(generator = "IDCATEGORIA")
-    private Integer id_categoria;
-	
+	@Basic(optional = false)
+	@Column(name = "IDCATEGORIA")
+	@GeneratedValue(generator = "IDCATEGORIA")
+	private Integer id_categoria;
+
 	@Column(name = "IDESTADO_INMUEBLE")
-	 private  Integer id_estado_inmueble;
-	
-	
-	  @Column(name = "IDINMUEBLE")
-		 private  Integer id_inmueble;
-	
-	  @Column(name = "NOMBRE_CATEGORIA")
-		 private  String nombre_categoria;
+	private Integer id_estado_inmueble;
+
+	@Column(name = "IDINMUEBLE")
+	private Integer id_inmueble;
+
+	@Column(name = "NOMBRE_CATEGORIA")
+	private String nombre_categoria;
 
 	public Integer getId_categoria() {
 		return id_categoria;
@@ -74,7 +72,5 @@ public class Categorias implements Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
-   
 
 }
