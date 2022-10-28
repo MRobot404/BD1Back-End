@@ -5,8 +5,11 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,12 +23,23 @@ public class MenuService {
 
 	@Autowired
 	MenuRepository menuRepository;
-	
+
 	@GetMapping(path = "/buscar")
-    public List<Menu> buscar(){
+	public List<Menu> buscar() {
 		return menuRepository.findAll();
 	}
 
+	@PostMapping(path = "/guardar")
+	public Menu saveMenu(@RequestBody Menu menu) {
+		return menuRepository.save(menu);
+	}
 
+	@DeleteMapping(path = "/eliminar/{id_menu}")
+	public void eliminar(@PathVariable("id_menu") Integer id_menu) {
+		Optional<Menu> menu = menuRepository.findById(id_menu);
+		if (menu.isPresent()) {
+			menuRepository.delete(menu.get());
+		}
+	}
 
 }

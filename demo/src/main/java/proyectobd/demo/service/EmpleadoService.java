@@ -23,25 +23,23 @@ public class EmpleadoService {
 
 	@Autowired
 	EmpleadoRepository empleadoRepository;
-	
+
 	@GetMapping(path = "/buscar")
-    public List<Empleado> buscar(){
+	public List<Empleado> buscar() {
 		return empleadoRepository.findAll();
 	}
-	@PostMapping(path ="/guardar")
+
+	@PostMapping(path = "/guardar")
 	public Empleado saveEmpleado(@RequestBody Empleado empleado) {
 		return empleadoRepository.save(empleado);
 	}
-	
-	@DeleteMapping(path="/eliminar/{id_empleado}")
-	public void eliminar(@PathVariable ("id_empleado") Integer id_empleado) {
-		Optional <Empleado> persona =  empleadoRepository.findById(id_empleado);
-		if(persona.isPresent()) {
+
+	@DeleteMapping(path = "/eliminar/{id_empleado}")
+	public void eliminar(@PathVariable("id_empleado") Integer id_empleado) {
+		Optional<Empleado> persona = empleadoRepository.findById(id_empleado);
+		if (persona.isPresent()) {
 			empleadoRepository.delete(persona.get());
 		}
 	}
-	
-
 
 }
-

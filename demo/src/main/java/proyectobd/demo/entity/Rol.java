@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -34,6 +35,8 @@ public class Rol implements Serializable{
 	   
 	   @Column(name = "NOMBRE_ROL")
 		 private  String nombrerol;
+	   
+	   
 
 
 	public Integer getIdrol() {
