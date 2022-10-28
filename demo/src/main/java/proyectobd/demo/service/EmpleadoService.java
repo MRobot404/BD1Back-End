@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import proyectobd.demo.entity.Empleado;
-import proyectobd.demo.entity.Persona;
 import proyectobd.demo.repository.EmpleadoRepository;
 
 @RestController

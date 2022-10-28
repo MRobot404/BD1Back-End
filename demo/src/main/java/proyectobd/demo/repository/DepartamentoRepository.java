@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import proyectobd.demo.entity.Departamento;
 
 
-@Repository("rolRepository")
+@Repository("departamentoRepository")
 public interface DepartamentoRepository extends JpaRepository<Departamento, Serializable> {
 
 }
