@@ -6,6 +6,7 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -13,12 +14,20 @@ import org.hibernate.annotations.Parameter;
 
 @Table(name = "aldeas_caserio")
 public class Aldeas_Caserio implements Serializable{
-	private static final long serialVersionUID = 1L;
 	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5968161831792878196L;
+
+
+
 	@GenericGenerator(name = "ID_ALDEA", strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator", parameters = {
 		    @Parameter(name = "sequence_name", value = "test_seq"),
 		    @Parameter(name = "initial_value", value = "1"), @Parameter(name = "increment_size", value = "1"),
 		    @Parameter(name = "schema", value = "SYSTEM") })
+
 
   	@Id
     @Basic(optional = false)
@@ -33,6 +42,7 @@ public class Aldeas_Caserio implements Serializable{
 	 
 	 @Column(name = "ALDEA_CASERIO")
 	 private  String aldea_caserio;
+	 
 
 
 	public Integer getId_aldea() {

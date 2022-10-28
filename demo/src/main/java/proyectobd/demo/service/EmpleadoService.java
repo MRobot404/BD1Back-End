@@ -1,7 +1,6 @@
 package proyectobd.demo.service;
 
 import java.util.List;
-<<<<<<< HEAD
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,55 +13,36 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import proyectobd.demo.entity.Empleado;
 import proyectobd.demo.entity.Persona;
 import proyectobd.demo.repository.EmpleadoRepository;
 
-=======
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import proyectobd.demo.entity.Empleado;
-import proyectobd.demo.repository.EmpleadoRepository;
-
-
->>>>>>> 76d364d353372036d643f9b09e6f242166cf2823
 @RestController
 @RequestMapping("/empleado")
 @CrossOrigin
 public class EmpleadoService {
 
-<<<<<<< HEAD
-=======
-	
->>>>>>> 76d364d353372036d643f9b09e6f242166cf2823
 	@Autowired
 	EmpleadoRepository empleadoRepository;
 	
 	@GetMapping(path = "/buscar")
-<<<<<<< HEAD
     public List<Empleado> buscar(){
 		return empleadoRepository.findAll();
 	}
 	@PostMapping(path ="/guardar")
-	public Persona saveEmpleado(@RequestBody Empleado empleado) {
+	public Empleado saveEmpleado(@RequestBody Empleado empleado) {
 		return empleadoRepository.save(empleado);
 	}
 	
-	@DeleteMapping(path="/eliminar/{idpersona}")
-	public void eliminar(@PathVariable ("idpersona") Integer idpersona) {
-		Optional <Persona> persona =  personaRepository.findById(idpersona);
+	@DeleteMapping(path="/eliminar/{id_empleado}")
+	public void eliminar(@PathVariable ("id_empleado") Integer id_empleado) {
+		Optional <Empleado> persona =  empleadoRepository.findById(id_empleado);
 		if(persona.isPresent()) {
-			personaRepository.delete(persona.get());
+			empleadoRepository.delete(persona.get());
 		}
 	}
-=======
-     public List<Empleado> buscar(){
-		return empleadoRepository.findAll();
-	}
->>>>>>> 76d364d353372036d643f9b09e6f242166cf2823
 	
+
+
 }
+
