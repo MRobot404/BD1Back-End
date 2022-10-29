@@ -29,6 +29,13 @@ public class Persona implements Serializable {
     @GeneratedValue(generator = "IDPERSONA")
     private Integer idpersona;
 	
+	@Column(name = "NOMBRE")
+	 private  String nombre;
+	
+	@Column(name = "USUARIO")
+	 private  String usuario;
+	
+	
 	@Column(name = "APELLIDO")
 	 private  String apellido;
 	
@@ -38,6 +45,22 @@ public class Persona implements Serializable {
 	
 	@Column(name = "CONTRASENA")
 	 private  String contrasena;
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
 
 	public Integer getIdpersona() {
 		return idpersona;
