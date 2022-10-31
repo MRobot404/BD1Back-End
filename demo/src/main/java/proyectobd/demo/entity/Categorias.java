@@ -19,7 +19,7 @@ public class Categorias implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@GenericGenerator(name = "IDCATEGORIA", strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator", parameters = {
-			@Parameter(name = "sequence_name", value = "test_seq"), @Parameter(name = "initial_value", value = "1"),
+			@Parameter(name = "sequence_name", value = "test_seq1"), @Parameter(name = "initial_value", value = "1"),
 			@Parameter(name = "increment_size", value = "1"), @Parameter(name = "schema", value = "SYSTEM") })
 
 	@Id

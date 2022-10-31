@@ -28,6 +28,15 @@ public class PersonaService {
      public List<Persona> buscar(){
 		return personaRepository.findAll();
 	}
+	
+	@GetMapping(path = "/buscar/por/{idpersona}")
+    public Persona buscarDI(@PathVariable Integer idpersona){
+		Optional<Persona>temp=personaRepository.findById(idpersona);
+		if(temp.isPresent()) {
+			return temp.get();
+		}
+		return null;
+	}
 	@PostMapping(path ="/guardar")
 	public Persona saveRol(@RequestBody Persona persona) {
 		return personaRepository.save(persona);

@@ -22,7 +22,7 @@ public class Rol_Tipo_Usuario implements Serializable{
 
 
 	   @GenericGenerator(name = "ID_ROL_TIPO_USUARIO", strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator", parameters = {
-	    @Parameter(name = "sequence_name", value = "test_seq"),
+	    @Parameter(name = "sequence_name", value = "test_seq17"),
 	    @Parameter(name = "initial_value", value = "1"), @Parameter(name = "increment_size", value = "1"),
 	    @Parameter(name = "schema", value = "SYSTEM") })
 
