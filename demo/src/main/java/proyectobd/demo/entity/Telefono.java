@@ -1,4 +1,4 @@
-package proyectobd.demo.entity;
+	package proyectobd.demo.entity;
 
 import java.io.Serializable;
 

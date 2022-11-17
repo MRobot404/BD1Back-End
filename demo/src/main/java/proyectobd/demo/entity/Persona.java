@@ -32,9 +32,6 @@ public class Persona implements Serializable {
 	@Column(name = "NOMBRE")
 	 private  String nombre;
 	
-	@Column(name = "USUARIO")
-	 private  String usuario;
-	
 	
 	@Column(name = "APELLIDO")
 	 private  String apellido;
@@ -43,8 +40,6 @@ public class Persona implements Serializable {
 	@Column(name = "FECHA_NACIMIENTO")
 	 private  String fechanacimiento;
 	
-	@Column(name = "CONTRASENA")
-	 private  String contrasena;
 
 	public String getNombre() {
 		return nombre;
@@ -54,13 +49,6 @@ public class Persona implements Serializable {
 		this.nombre = nombre;
 	}
 
-	public String getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
 
 	public Integer getIdpersona() {
 		return idpersona;
@@ -86,13 +74,7 @@ public class Persona implements Serializable {
 		this.fechanacimiento = fechanacimiento;
 	}
 
-	public String getContrasena() {
-		return contrasena;
-	}
 
-	public void setContrasena(String contrasena) {
-		this.contrasena = contrasena;
-	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;

@@ -36,11 +36,20 @@ public class Empleado {
 	@Column(name = "FECHA_EGRESO")
 	private String fecha_egreso;
 
-	@Column(name = "USUARIO_EMPLEADO")
-	private String usuario_empleado;
+	@Column(name = "USUARIO")
+	private String usuario;
+	
+	@Column(name = "CONTRASENA")
+	private String contrasena;
 
-	@Column(name = "NOMBRE_ROL")
-	private String nombrerol;
+
+	public String getContrasena() {
+		return contrasena;
+	}
+
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
+	}
 
 	public Integer getId_empleado() {
 		return id_empleado;
@@ -82,20 +91,16 @@ public class Empleado {
 		this.fecha_egreso = fecha_egreso;
 	}
 
-	public String getUsuario_empleado() {
-		return usuario_empleado;
+	public String getUsuario() {
+		return usuario;
 	}
 
-	public void setUsuario_empleado(String usuario_empleado) {
-		this.usuario_empleado = usuario_empleado;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
-	public String getNombrerol() {
-		return nombrerol;
-	}
+	
 
-	public void setNombrerol(String nombrerol) {
-		this.nombrerol = nombrerol;
-	}
+	
 
 }

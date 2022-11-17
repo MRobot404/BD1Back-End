@@ -50,9 +50,5 @@ public class PersonaService {
 		}
 	}
 	
-	@PostMapping(path="/login")
-	public List<Persona> login(@RequestBody Persona persona){
-	 return personaRepository.findByUsuarioAndContrasena(persona.getUsuario(),persona.getContrasena());
-	
-	}	
+
 }

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import proyectobd.demo.entity.Cliente;
 import proyectobd.demo.entity.Empleado;
 import proyectobd.demo.repository.EmpleadoRepository;
 
@@ -41,5 +42,11 @@ public class EmpleadoService {
 			empleadoRepository.delete(persona.get());
 		}
 	}
+	
+	@PostMapping(path="/login")
+	public List<Empleado> login(@RequestBody Empleado empleado){
+	 return empleadoRepository.findByUsuarioAndContrasena(empleado.getUsuario(),empleado.getContrasena());
+	
+	}	
 
 }

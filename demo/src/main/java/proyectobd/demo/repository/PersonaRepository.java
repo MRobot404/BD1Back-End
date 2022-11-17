@@ -12,5 +12,4 @@ import proyectobd.demo.entity.Persona;
 
 @Repository("personaRepository")
 public interface PersonaRepository extends JpaRepository<Persona, Serializable>{
-	public List<Persona> findByUsuarioAndContrasena(String usuario, String contrasena);
 }

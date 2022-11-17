@@ -40,4 +40,10 @@ public class ClienteService {
 			clienteRepository.delete(cliente.get());
 		}
 	}
+	
+	@PostMapping(path="/login")
+	public List<Cliente> login(@RequestBody Cliente cliente){
+	 return clienteRepository.findByUsuarioAndContrasena(cliente.getUsuario(),cliente.getContrasena());
+	
+	}	
 }

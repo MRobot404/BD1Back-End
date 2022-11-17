@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import proyectobd.demo.entity.Menu;
+import proyectobd.demo.entity.Persona;
 import proyectobd.demo.repository.MenuRepository;
 
 @RestController
@@ -40,6 +41,15 @@ public class MenuService {
 		if (menu.isPresent()) {
 			menuRepository.delete(menu.get());
 		}
+	}
+	
+	@GetMapping(path = "/buscar/por/{id_menu}")
+    public Menu buscarDI(@PathVariable Integer id_menu){
+		Optional<Menu>temp=menuRepository.findById(id_menu);
+		if(temp.isPresent()) {
+			return temp.get();
+		}
+		return null;
 	}
 
 }

@@ -37,10 +37,21 @@ public class Cliente implements Serializable {
     @Column(name = "FECHA_ALTA")
     private String fecha_alta;
 
-    @Column(name = "USUARIO_CLIENTE")
-    private String usuario_cliente;
+    @Column(name = "USUARIO")
+    private String usuario;
+    
+    @Column(name="CONTRASENA")
+    private String contrasena; 
 
-    public Integer getId_cliente() {
+    public String getContrasena() {
+		return contrasena;
+	}
+
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
+	}
+
+	public Integer getId_cliente() {
         return id_cliente;
     }
 
@@ -72,15 +83,17 @@ public class Cliente implements Serializable {
         this.fecha_alta = fecha_alta;
     }
 
-    public String getUsuario_cliente() {
-        return usuario_cliente;
-    }
+  
 
-    public void setUsuario_cliente(String usuario_cliente) {
-        this.usuario_cliente = usuario_cliente;
-    }
+    public String getUsuario() {
+		return usuario;
+	}
 
-    public static long getSerialversionuid() {
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
+	public static long getSerialversionuid() {
         return serialVersionUID;
     }
 
