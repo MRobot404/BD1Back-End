@@ -31,8 +31,7 @@ public class Categorias implements Serializable {
 	@Column(name = "IDESTADO_INMUEBLE")
 	private Integer id_estado_inmueble;
 
-	@Column(name = "IDINMUEBLE")
-	private Integer id_inmueble;
+	
 
 	@Column(name = "NOMBRE_CATEGORIA")
 	private String nombre_categoria;
@@ -51,14 +50,6 @@ public class Categorias implements Serializable {
 
 	public void setId_estado_inmueble(Integer id_estado_inmueble) {
 		this.id_estado_inmueble = id_estado_inmueble;
-	}
-
-	public Integer getId_inmueble() {
-		return id_inmueble;
-	}
-
-	public void setId_inmueble(Integer id_inmueble) {
-		this.id_inmueble = id_inmueble;
 	}
 
 	public String getNombre_categoria() {
