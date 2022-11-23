@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import proyectobd.demo.entity.Cliente;
 import proyectobd.demo.entity.Empleado;
 import proyectobd.demo.repository.EmpleadoRepository;
 
@@ -32,6 +31,7 @@ public class EmpleadoService {
 
 	@PostMapping(path = "/guardar")
 	public Empleado saveEmpleado(@RequestBody Empleado empleado) {
+	empleado.setContrasena(BCrypt.hashpw(empleado.getContrasena(), BCrypt.gensalt()));
 		return empleadoRepository.save(empleado);
 	}
 

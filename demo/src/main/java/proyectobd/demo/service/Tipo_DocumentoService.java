@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import proyectobd.demo.entity.Telefono;
 import proyectobd.demo.entity.Tipo_Documento;
 import proyectobd.demo.repository.Tipo_DocumentoRepository;
 

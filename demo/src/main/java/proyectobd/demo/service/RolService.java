@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import proyectobd.demo.entity.Rol;
+import proyectobd.demo.entity.Rol_Tipo_Usuario;
 import proyectobd.demo.repository.RolRepository;
+import proyectobd.demo.repository.Rol_Tipo_UsuarioRepository;
 
 @RestController
 @RequestMapping("/rol")
@@ -24,6 +26,9 @@ public class RolService {
 	@Autowired
 	RolRepository rolRepository;
 	
+	@Autowired
+	Rol_Tipo_UsuarioRepository rol_Tipo_UsuarioRepository;
+	
 	@GetMapping(path = "/buscar")
      public List<Rol> buscar(){
 		return rolRepository.findAll();
@@ -31,13 +36,25 @@ public class RolService {
 	
 	@PostMapping(path ="/guardar")
 	public Rol saveRol(@RequestBody Rol rol) {
+		
+		List<Rol_Tipo_Usuario> roles=rol.getRoleslist();
+		rol.setRoleslist(null);
+		rolRepository.save(rol);
+		for(Rol_Tipo_Usuario  rols: roles) {
+			rols.setId_rol(rol.getIdrol());
+		}
+		
+		rol_Tipo_UsuarioRepository.saveAll(roles);
+		rol.setRoleslist(roles);
 		return rolRepository.save(rol);
+		
 	}
 	
 	@DeleteMapping(path="/eliminar/{id_rol}")
 	public void eliminar(@PathVariable ("id_rol") Integer id_rol) {
 		Optional <Rol> rol =  rolRepository.findById(id_rol);
 		if(rol.isPresent()) {
+			rol_Tipo_UsuarioRepository.deleteAll(rol.get().getRoleslist());
 			rolRepository.delete(rol.get());
 		}
 	}

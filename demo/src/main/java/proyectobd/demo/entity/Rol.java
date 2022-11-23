@@ -1,6 +1,7 @@
 package proyectobd.demo.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -36,7 +37,19 @@ public class Rol implements Serializable{
 	   @Column(name = "NOMBRE_ROL")
 		 private  String nombrerol;
 	   
-	   
+	   @OneToMany(mappedBy = "id_rol")
+		private List<Rol_Tipo_Usuario> roleslist;
+		
+
+
+	public List<Rol_Tipo_Usuario> getRoleslist() {
+		return roleslist;
+	}
+
+
+	public void setRoleslist(List<Rol_Tipo_Usuario> roleslist) {
+		this.roleslist = roleslist;
+	}
 
 
 	public Integer getIdrol() {

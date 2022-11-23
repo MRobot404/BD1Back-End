@@ -1,12 +1,14 @@
 package proyectobd.demo.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -40,6 +42,61 @@ public class Persona implements Serializable {
 	@Column(name = "FECHA_NACIMIENTO")
 	 private  String fechanacimiento;
 	
+	@OneToMany(mappedBy = "idpersona")
+	private List<Telefono> telefonolist;
+	
+	@OneToMany(mappedBy = "id_persona")
+	private List<Correo> correolist;
+	
+	@OneToMany(mappedBy = "id_persona")
+	private List<Empleado> empleadolist;
+	
+	@OneToMany(mappedBy = "id_persona")
+	private List<Cliente> clientelist;
+	
+	@OneToMany(mappedBy = "id_persona")
+	private List<Documento_Persona> documento_personalist;
+
+	
+	public List<Empleado> getEmpleadolist() {
+		return empleadolist;
+	}
+
+	public void setEmpleadolist(List<Empleado> empleadolist) {
+		this.empleadolist = empleadolist;
+	}
+
+	public List<Cliente> getClientelist() {
+		return clientelist;
+	}
+
+	public void setClientelist(List<Cliente> clientelist) {
+		this.clientelist = clientelist;
+	}
+
+	public List<Documento_Persona> getDocumento_personalist() {
+		return documento_personalist;
+	}
+
+	public void setDocumento_personalist(List<Documento_Persona> documento_personalist) {
+		this.documento_personalist = documento_personalist;
+	}
+
+	public List<Correo> getCorreolist() {
+		return correolist;
+	}
+
+	public void setCorreolist(List<Correo> correolist) {
+		this.correolist = correolist;
+	}
+
+	public List<Telefono> getTelefonolist() {
+		return telefonolist;
+	}
+
+	public void setTelefonolist(List<Telefono> telefonolist) {
+		this.telefonolist = telefonolist;
+	}
 
 	public String getNombre() {
 		return nombre;
