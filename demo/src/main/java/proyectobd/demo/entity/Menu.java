@@ -24,28 +24,38 @@ public class Menu implements Serializable {
 
 	@Id
 	@Basic(optional = false)
-	@Column(name = "ID_MENU")
-	@GeneratedValue(generator = "ID_MENU")
-	private Integer id_menu;
+	@Column(name = "IDMENU")
+	@GeneratedValue(generator = "IDMENU")
+	private Integer idmenu;
 
-	@Column(name = "OPCION_MENU")
-	private String opcion_menu;
+	@Column(name = "OPCIONMENU")
+	private String opcion;
 
-	public Integer getId_menu() {
-		return id_menu;
+
+
+	public Integer getIdmenu() {
+		return idmenu;
 	}
 
-	public void setId_menu(Integer id_menu) {
-		this.id_menu = id_menu;
+
+
+	public void setIdmenu(Integer idmenu) {
+		this.idmenu = idmenu;
 	}
 
-	public String getOpcion_menu() {
-		return opcion_menu;
+
+
+	public String getOpcion() {
+		return opcion;
 	}
 
-	public void setOpcion_menu(String opcion_menu) {
-		this.opcion_menu = opcion_menu;
+
+
+	public void setOpcion(String opcion) {
+		this.opcion = opcion;
 	}
+
+
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;

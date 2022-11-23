@@ -30,6 +30,7 @@ public class ClienteService {
 	
 	@PostMapping(path ="/guardar")
 	public Cliente savecliente(@RequestBody Cliente cliente) {
+		cliente.setContrasena(BCrypt.hashpw(cliente.getContrasena(), BCrypt.gensalt()));
 		return clienteRepository.save(cliente);
 	}
 	
