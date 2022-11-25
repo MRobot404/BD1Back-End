@@ -1,13 +1,14 @@
 package proyectobd.demo.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -39,7 +40,7 @@ public class Rol_Tipo_Usuario implements Serializable{
 	   @Column(name = "ID_TIPO_USUARIO")
 		 private  Integer id_tipo_usuario;
 	   
-	  
+			
 
 
 

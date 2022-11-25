@@ -1,12 +1,14 @@
 package proyectobd.demo.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -37,7 +39,7 @@ public class Reserva implements Serializable {
 	@Column(name = "IDCLIENTE")
 	private Integer id_cliente;
 
-	@Column(name = "FECHA_RESERVA")
+	@Column(name = "FECHA_")
 	private String fecha_reserva;
 
 	@Column(name = "TIEMPO_RESERVA")
@@ -48,6 +50,17 @@ public class Reserva implements Serializable {
 
 	@Column(name = "FECHA_CANCELA")
 	private String fecha_cancela;
+	
+	 @OneToMany(mappedBy = "IDRESERVA")
+		private List<Reserva_Pago> reserva_pagoslist;
+			
+	public List<Reserva_Pago> getReserva_pagoslist() {
+		return reserva_pagoslist;
+	}
+
+	public void setReserva_pagoslist(List<Reserva_Pago> reserva_pagoslist) {
+		this.reserva_pagoslist = reserva_pagoslist;
+	}
 
 	public Integer getId_reserva() {
 		return id_reserva;

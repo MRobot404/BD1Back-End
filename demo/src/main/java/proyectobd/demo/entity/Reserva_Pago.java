@@ -31,6 +31,8 @@ public class Reserva_Pago implements Serializable {
     @Column(name = "IDRESERVA")
     private Integer IDRESERVA;
 
+    
+   
     public Integer getId_reserva_pago() {
         return id_reserva_pago;
     }

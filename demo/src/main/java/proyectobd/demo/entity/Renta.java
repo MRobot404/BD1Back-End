@@ -1,12 +1,14 @@
 package proyectobd.demo.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -65,6 +67,19 @@ public class Renta implements Serializable{
 	   
 	   @Column(name = "FECHA_CANCELACION")
 		 private  String fecha_cancelacion;
+
+	   @OneToMany(mappedBy = "id_renta")
+			private List<Renta_Pago> rentapagolist;
+			
+
+	public List<Renta_Pago> getRentapagolist() {
+		return rentapagolist;
+	}
+
+
+	public void setRentapagolist(List<Renta_Pago> rentapagolist) {
+		this.rentapagolist = rentapagolist;
+	}
 
 
 	public Integer getId_renta() {

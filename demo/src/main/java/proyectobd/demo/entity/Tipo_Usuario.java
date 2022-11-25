@@ -1,10 +1,13 @@
 package proyectobd.demo.entity;
 
+import java.util.List;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -31,6 +34,19 @@ public class Tipo_Usuario {
 	
 	@Column(name = "TIPO_USUARIO")
 	 private  String tipo_usuario;
+	
+	   @OneToMany(mappedBy = "id_tipo_usuario")
+			private List<Cliente> clientelist;
+	   
+	   
+
+	public List<Cliente> getClientelist() {
+		return clientelist;
+	}
+
+	public void setClientelist(List<Cliente> clientelist) {
+		this.clientelist = clientelist;
+	}
 
 	public Integer getId_tipo_usuario() {
 		return id_tipo_usuario;
